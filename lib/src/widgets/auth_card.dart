@@ -502,7 +502,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
         FocusScope.of(context).requestFocus(_passwordFocusNode);
       },
       validator: widget.emailValidator,
-      onSaved: (value) => _authData['email'] = value,
+      onSaved: (value) => _authData['email'] = value.trim(),
     );
   }
 
@@ -527,7 +527,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
         }
       },
       validator: widget.passwordValidator,
-      onSaved: (value) => _authData['password'] = value,
+      onSaved: (value) => _authData['password'] = value.trim(),
     );
   }
 
