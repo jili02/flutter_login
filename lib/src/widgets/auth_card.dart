@@ -658,7 +658,8 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
             width: cardWidth,
             child: Column(
               children: <Widget>[
-                _buildForgotPassword(theme, messages),
+//todo                暂时不支持找回密码，后续改为手机短信找回
+//                _buildForgotPassword(theme, messages),
                 _buildSubmitButton(theme, messages),
                 _buildSwitchAuthButton(theme, messages),
               ],

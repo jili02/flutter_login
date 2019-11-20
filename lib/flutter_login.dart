@@ -215,15 +215,16 @@ class FlutterLogin extends StatefulWidget {
   static final FormFieldValidator<String> defaultEmailValidator = (value) {
 //    if (value.isEmpty || !Regex.email.hasMatch(value)) {
 //    return 'Invalid email!';
-
-    if (value.isEmpty || !Regex.chinesePhoneNumber.hasMatch(value)) {
+    var valueStr = value.trim();
+    if (valueStr.isEmpty || !Regex.chinesePhoneNumber.hasMatch(valueStr)) {
       return '手机号为空或格式错误!';
     }
     return null;
   };
 
   static final FormFieldValidator<String> defaultPasswordValidator = (value) {
-    if (value.isEmpty || value.length <= 2) {
+    var valueStr = value.trim();
+    if (valueStr.isEmpty || valueStr.length <= 2) {
       return '密码为空或小于2位!';
 //      return 'Password is too short!';
     }
