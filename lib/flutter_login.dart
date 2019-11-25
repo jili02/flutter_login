@@ -282,10 +282,12 @@ class _FlutterLoginState extends State<FlutterLogin>
 
   @override
   void dispose() {
-    super.dispose();
+    //先调用controller.dispose释放了动画资源，再调用super
+    // 否则报错AuthCardState#c83bc(tickers: tracking 2 tickers) was disposed with an active Ticker.
     _loadingController.dispose();
     _logoController.dispose();
     _titleController.dispose();
+    super.dispose();
   }
 
   void _reverseHeaderAnimation() {
